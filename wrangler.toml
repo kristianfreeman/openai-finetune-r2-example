@@ -1,0 +1,7 @@
+name = "openai-finetune-r2-example"
+main = "src/worker.ts"
+compatibility_date = "2023-08-22"
+
+[[r2_buckets]]
+binding = "ASSETS"
+bucket_name = "openai-fine-tuning-example"
