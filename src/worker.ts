@@ -19,12 +19,6 @@ const getJobs = async (c: Context) => {
 	return resp.data
 }
 
-const getModels = async (c: Context) => {
-	const openai: OpenAI = c.get("openai")
-	const resp = await openai.fineTunes.list()
-	return resp.data
-}
-
 const createFile = async (c: Context, r2Object: R2ObjectBody) => {
 	const openai: OpenAI = c.get("openai")
 
@@ -61,11 +55,6 @@ app.use('*', async (c, next) => {
 app.get('/jobs', async c => {
 	const jobs = await getJobs(c)
 	return c.json(jobs)
-})
-
-app.get('/models', async c => {
-	const models = await getModels(c)
-	return c.json(models)
 })
 
 app.post('/files', async c => {
