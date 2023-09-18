@@ -57,7 +57,7 @@ app.get('/jobs', async c => {
 	return c.json(jobs)
 })
 
-app.post('/files', async c => {
+app.get('/files', async c => {
 	const fileQueryParam = c.req.query("file")
 	if (!fileQueryParam) return c.text("Missing file query param", 400)
 
@@ -68,7 +68,7 @@ app.post('/files', async c => {
 	return c.json(uploadedFile)
 })
 
-app.post('/models', async c => {
+app.get('/models', async c => {
 	const fileQueryParam = c.req.query("file")
 	if (!fileQueryParam) return c.text("Missing file query param", 400)
 
